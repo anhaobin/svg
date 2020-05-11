@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		#demoCanvas{
+			width: 268px;
+			height: 264px;
+		}
+	</style>
+	<body>
+		<div id="demoCanvas"></div>
+		<!--[if lt IE 10]> 
+		    <script src="../build/svga.ie.min.js"></script>
+		<![endif]-->
+		<!--[if gte IE 10]><!-->
+		    <script src="../build/svga.min.js"></script>
+		<!--<![endif]-->
+		<script src="https://cdn.jsdelivr.net/npm/svgaplayerweb@2.3.0/build/svga.min.js"></script> 
+		<script type="text/javascript">
+			var player = new SVGA.Player('#demoCanvas');
+			var parser = new SVGA.Parser('#demoCanvas'); // Must Provide same selector eg:#demoCanvas IF support IE6+
+			parser.load('./svg/2yuanhongbao.svga', function(videoItem) {
+			    player.setVideoItem(videoItem);
+			    player.startAnimation();
+			})
+		</script>
+	</body>
+</html>
